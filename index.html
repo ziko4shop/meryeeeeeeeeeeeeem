@@ -1,720 +1,196 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
+<html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>Nuestro Primer Mes 💙💜 - Nuestra Hermosa Historia de Amor</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عيد ميلاد سعيد ❤️</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Cairo', sans-serif;
+body{
+  margin:0;
+  padding:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#ff758c,#ff7eb3);
+  color:white;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  height:100vh;
 }
 
-body {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #0a1a3a, #1e3c72, #4a1a7a);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: auto;
-  color: white;
+h1{
+  font-size:48px;
+  margin-top:20px;
+}
+
+#heart-container{
   position: relative;
-  padding: 20px;
+  width: 250px;
+  height: 250px;
+  margin-top: 20px;
 }
 
-.container {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 40px 30px;
-  border-radius: 30px;
-  text-align: center;
-  max-width: 700px;
-  width: 100%;
-  box-shadow: 
-    0 25px 50px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  animation: fadeIn 1.8s ease-out;
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  z-index: 10;
-  overflow: hidden;
-  margin: 40px 0;
+#heart-container img{
+  width: 120px;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
 }
 
-.container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #4a1a7a, #6a11cb, #1e3c72);
-  z-index: 1;
+#heart-container::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:250px;
+  height:250px;
+  background:url('https://i.imgur.com/4YqOruc.jpg') no-repeat center/contain;
+  z-index:-1;
+  animation:pulse 2s infinite;
 }
 
-/* Imagen mejorada */
-.photo-container {
-  position: relative;
-  width: 220px;
-  height: 220px;
-  margin: 0 auto 30px;
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.05);}
+  100%{transform:scale(1);}
 }
 
-.photo {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 5px solid transparent;
-  background: linear-gradient(45deg, #6a11cb, #1e3c72, #4a1a7a) border-box;
-  box-shadow: 
-    0 15px 35px rgba(0, 0, 0, 0.5),
-    0 0 0 8px rgba(106, 17, 203, 0.2);
-  animation: photoGlow 3s infinite alternate;
-  transition: transform 0.5s ease;
+button{
+  margin-top:30px;
+  padding:15px 40px;
+  font-size:18px;
+  border:none;
+  border-radius:30px;
+  background:white;
+  color:#ff4b7d;
+  cursor:pointer;
 }
 
-.photo:hover {
-  transform: scale(1.05) rotate(2deg);
+#loveMessage{
+  max-width:700px;
+  margin-top:30px;
+  font-size:22px;
+  line-height:1.7;
+  display:none;
+  background:rgba(255,255,255,0.15);
+  padding:25px;
+  border-radius:20px;
+  text-align:left;
 }
 
-.photo-container::after {
-  content: '💙💜';
-  position: absolute;
-  bottom: -15px;
-  right: -15px;
-  background: rgba(30, 60, 114, 0.9);
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  animation: pulse 2s infinite;
+.heart-fly{
+  position:absolute;
+  font-size:20px;
+  animation:fly 6s linear infinite;
 }
 
-h1 {
-  font-size: 38px;
-  margin-bottom: 15px;
-  background: linear-gradient(90deg, #fff, #d9b8ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-weight: 900;
-  text-shadow: 0 2px 10px rgba(106, 17, 203, 0.3);
-  line-height: 1.3;
+@keyframes fly{
+  from{transform:translateY(100vh);opacity:1;}
+  to{transform:translateY(-10vh);opacity:0;}
 }
 
-h2 {
-  font-size: 22px;
-  font-weight: 400;
-  margin-bottom: 30px;
-  color: #e6d7ff;
-  position: relative;
-  display: inline-block;
-  padding: 0 20px;
+.rose{
+  position:absolute;
+  width:30px;
+  top:-30px;
+  animation:fall 5s linear infinite;
 }
 
-h2::before, h2::after {
-  content: '✦';
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #6a11cb;
-  font-size: 20px;
-}
-
-h2::before {
-  left: 0;
-}
-
-h2::after {
-  right: 0;
-}
-
-.message-box {
-  background: rgba(30, 60, 114, 0.25);
-  border-radius: 20px;
-  padding: 30px;
-  margin: 30px 0;
-  border: 1px solid rgba(106, 17, 203, 0.3);
-  position: relative;
-  overflow: hidden;
-  text-align: left;
-}
-
-.message-box::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, transparent 30%, rgba(106, 17, 203, 0.1) 50%, transparent 70%);
-  animation: shimmer 8s infinite linear;
-}
-
-.message-content {
-  position: relative;
-  z-index: 1;
-}
-
-.message-section {
-  margin-bottom: 25px;
-  padding-bottom: 25px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.message-section:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.message-title {
-  font-size: 20px;
-  color: #d9b8ff;
-  margin-bottom: 12px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.message-title i {
-  font-size: 22px;
-}
-
-p {
-  font-size: 17px;
-  line-height: 1.9;
-  margin-bottom: 15px;
-  position: relative;
-  z-index: 1;
-  text-align: justify;
-}
-
-.highlight {
-  color: #d9b8ff;
-  font-weight: 600;
-  background: rgba(106, 17, 203, 0.2);
-  padding: 2px 8px;
-  border-radius: 5px;
-}
-
-.heart-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 25px 0;
-}
-
-.heart {
-  font-size: 55px;
-  animation: beat 1.2s infinite;
-  text-shadow: 0 0 20px rgba(255, 100, 200, 0.7);
-  transition: transform 0.3s ease;
-}
-
-.heart:hover {
-  transform: scale(1.4);
-}
-
-.heart:nth-child(1) {
-  animation-delay: 0s;
-  color: #1e3c72;
-}
-
-.heart:nth-child(2) {
-  animation-delay: 0.4s;
-  color: #6a11cb;
-}
-
-.heart:nth-child(3) {
-  animation-delay: 0.8s;
-}
-
-.memories-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin: 25px 0;
-}
-
-.memory-item {
-  background: rgba(30, 60, 114, 0.3);
-  padding: 15px;
-  border-radius: 15px;
-  min-width: 150px;
-  border: 1px solid rgba(106, 17, 203, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.memory-item:hover {
-  transform: translateY(-5px);
-  background: rgba(106, 17, 203, 0.3);
-}
-
-.memory-icon {
-  font-size: 28px;
-  margin-bottom: 8px;
-}
-
-.memory-text {
-  font-size: 14px;
-  color: #e6d7ff;
-}
-
-.footer {
-  margin-top: 30px;
-  font-size: 18px;
-  padding: 20px;
-  background: rgba(30, 60, 114, 0.3);
-  border-radius: 15px;
-  color: #d9b8ff;
-  font-weight: 600;
-  letter-spacing: 1px;
-  border: 1px solid rgba(106, 17, 203, 0.3);
-}
-
-.signature {
-  font-family: cursive;
-  font-size: 22px;
-  margin-top: 10px;
-  color: white;
-  text-shadow: 0 0 10px rgba(106, 17, 203, 0.5);
-}
-
-/* Animations */
-@keyframes beat {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.4); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(40px) scale(0.95); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-@keyframes floatUp {
-  0% {
-    transform: translateY(100vh) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.9;
-  }
-  90% {
-    opacity: 0.7;
-  }
-  100% {
-    transform: translateY(-100px) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-@keyframes photoGlow {
-  0% {
-    box-shadow: 
-      0 15px 35px rgba(0, 0, 0, 0.5),
-      0 0 0 8px rgba(106, 17, 203, 0.2);
-  }
-  100% {
-    box-shadow: 
-      0 15px 35px rgba(0, 0, 0, 0.5),
-      0 0 0 12px rgba(74, 26, 122, 0.4);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-/* Corazones flotantes mejorados */
-.heart-float {
-  position: absolute;
-  bottom: -50px;
-  font-size: 24px;
-  animation: floatUp linear forwards;
-  opacity: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Estrellas de fondo */
-.stars {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.star {
-  position: absolute;
-  background-color: white;
-  border-radius: 50%;
-  animation: twinkle 3s infinite;
-}
-
-@keyframes twinkle {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; }
-}
-
-/* Efectos para pantallas grandes */
-@media (min-width: 768px) {
-  .container {
-    padding: 50px 40px;
-  }
-  
-  h1 {
-    font-size: 42px;
-  }
-  
-  .photo-container {
-    width: 240px;
-    height: 240px;
-  }
-  
-  p {
-    font-size: 18px;
-  }
-}
-
-/* Efectos para móviles */
-@media (max-width: 480px) {
-  .container {
-    padding: 30px 20px;
-  }
-  
-  h1 {
-    font-size: 30px;
-  }
-  
-  h2 {
-    font-size: 19px;
-  }
-  
-  .photo-container {
-    width: 200px;
-    height: 200px;
-  }
-  
-  .message-box {
-    padding: 20px;
-  }
-  
-  p {
-    font-size: 16px;
-  }
+@keyframes fall{
+  0%{top:-30px;transform:translateX(0);}
+  100%{top:100vh;transform:translateX(50px);}
 }
 </style>
 </head>
 
 <body>
 
-<!-- Estrellas de fondo -->
-<div class="stars" id="stars"></div>
+<h1>عيد ميلاد سعيد ❤️</h1>
 
-<div class="container">
-
-  <div class="photo-container">
-    <img src="IMG_20251231_015357_276.jpg" class="photo" alt="Nuestra foto">
-  </div>
-
-  <h1>💙 Un Mes de Amor Inolvidable 💜<br>Un Viaje que Comenzó con Dos Corazones y Continuó con Almas Enamoradas</h1>
-  
-  <h2>Para quien convirtió mi vida en un jardín de rosas y esperanza</h2>
-
-  <div class="heart-container">
-    <div class="heart">💙</div>
-    <div class="heart">💜</div>
-    <div class="heart">❤️</div>
-  </div>
-
-  <div class="message-box">
-    <div class="message-content">
-      
-      <div class="message-section">
-        <div class="message-title">
-          <i>🌸</i>
-          <span>El Primer Mes: El Hermoso Comienzo</span>
-        </div>
-        <p>
-          Ha pasado <span class="highlight">un mes completo</span> desde que comencé el viaje más hermoso de mi vida, un viaje que no sé cómo describir excepto como una <span class="highlight">bendición de Dios</span>. Un mes lleno de sentimientos profundos y momentos preciosos. Cada día contigo fue un <span class="highlight">nuevo capítulo</span> en nuestra historia de amor, y cada momento fue un <span class="highlight">recuerdo fragante</span> con el que adornamos las páginas de nuestra vida.
-        </p>
-        <p>
-          En este mes, aprendí el significado de la <span class="highlight">paz interior</span> y la tranquilidad. Aprendí cómo el amor puede ser <span class="highlight">tranquilo y profundo</span> como el mar en las noches de verano, y cómo una sonrisa puede ser <span class="highlight">cálida</span> como el sol de invierno. Contigo descubrí que la felicidad es <span class="highlight">real</span> y que un hermoso sueño puede convertirse en <span class="highlight">realidad</span>.
-        </p>
-      </div>
-      
-      <div class="message-section">
-        <div class="message-title">
-          <i>✨</i>
-          <span>Momentos Inolvidables</span>
-        </div>
-        <p>
-          Qué <span class="highlight">hermosos</span> fueron esos momentos en los que nos reímos hasta que nos dolieron las barrigas de tanto reír. Qué <span class="highlight">maravillosas</span> fueron esas horas en las que hablamos de todo y de nada, del pasado, presente y futuro, de sueños y aspiraciones, de miedos y esperanzas.
-        </p>
-        <p>
-          Recuerdo el <span class="highlight">primer mensaje</span>, la <span class="highlight">primera risa</span>, la <span class="highlight">primera mirada</span> en la que sentí que el mundo se detenía y todo se volvía <span class="highlight">hermoso</span> con solo tu presencia. Recuerdo cómo tus <span class="highlight">palabras</span> tocaban mi corazón y me hacían sentir como el <span class="highlight">más afortunado</span> en este universo.
-        </p>
-      </div>
-      
-      <div class="message-section">
-        <div class="message-title">
-          <i>💕</i>
-          <span>Gracias por Ser Tú</span>
-        </div>
-        <p>
-          <span class="highlight">Gracias</span> por hacerme ver la vida en colores <span class="highlight">más hermosos</span>. Gracias por enseñarme que el amor <span class="highlight">no es solo un sentimiento</span>, sino una <span class="highlight">decisión, una elección y un sacrificio</span>. Gracias por <span class="highlight">tener paciencia con mis puntos débiles</span> y por <span class="highlight">compartir mis puntos fuertes</span>.
-        </p>
-        <p>
-          Gracias por ser el <span class="highlight">primer rostro</span> que quiero ver al despertar y la <span class="highlight">última voz</span> que quiero escuchar antes de dormir. Gracias por ser la <span class="highlight">calma</span> en mi tormenta, la <span class="highlight">luz</span> en mi oscuridad y la <span class="highlight">esperanza</span> en mi desesperación.
-        </p>
-      </div>
-      
-      <div class="message-section">
-        <div class="message-title">
-          <i>🚀</i>
-          <span>Nuestro Hermoso Futuro</span>
-        </div>
-        <p>
-          Este es solo el <span class="highlight">primer mes</span> de nuestro hermoso viaje. Tenemos por delante <span class="highlight">meses y años</span> llenos de sueños y recuerdos. Tenemos una <span class="highlight">vida entera</span> que queremos vivir juntos. Queremos <span class="highlight">construir</span>, <span class="highlight">reír</span>, <span class="highlight">soñar</span>, <span class="highlight">amar</span>.
-        </p>
-        <p>
-          Te prometo que <span class="highlight">siempre estaré</span> a tu lado. Te prometo <span class="highlight">respetarte</span> y <span class="highlight">valorarte</span>. Te prometo <span class="highlight">amarte más</span> cada día. Te prometo hacer de tu vida lo que mereces: <span class="highlight">hermosa, feliz</span> y llena de amor.
-        </p>
-      </div>
-      
-    </div>
-  </div>
-
-  <div class="memories-container">
-    <div class="memory-item">
-      <div class="memory-icon">💌</div>
-      <div class="memory-text">Primer mensaje de amor</div>
-    </div>
-    <div class="memory-item">
-      <div class="memory-icon">😂</div>
-      <div class="memory-text">Risas interminables</div>
-    </div>
-    <div class="memory-item">
-      <div class="memory-icon">🌙</div>
-      <div class="memory-text">Largas noches de conversación</div>
-    </div>
-    <div class="memory-item">
-      <div class="memory-icon">🤝</div>
-      <div class="memory-text">Comprensión sin límites</div>
-    </div>
-  </div>
-
-  <div class="footer">
-    Para siempre... y más allá de siempre
-    <div class="signature">Con todo mi amor y aprecio</div>
-  </div>
-
+<div id="heart-container">
+  <img src="https://i.imgur.com/wEpz6GA.jpg">
+  <img src="https://i.imgur.com/4YqOruc.jpg">
 </div>
 
+<button onclick="showMessage()">Open Message 💌</button>
+
+<div id="loveMessage"></div>
+
+<audio id="music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" autoplay loop></audio>
+
 <script>
-// Crear estrellas de fondo
-function createStars() {
-  const starsContainer = document.getElementById('stars');
-  const starCount = 200;
-  
-  for (let i = 0; i < starCount; i++) {
-    const star = document.createElement('div');
-    star.classList.add('star');
-    
-    // Tamaños aleatorios para las estrellas
-    const size = Math.random() * 3 + 1;
-    star.style.width = `${size}px`;
-    star.style.height = `${size}px`;
-    
-    // Posiciones aleatorias
-    star.style.left = `${Math.random() * 100}%`;
-    star.style.top = `${Math.random() * 100}%`;
-    
-    // Retraso aleatorio para el centelleo
-    star.style.animationDelay = `${Math.random() * 3}s`;
-    
-    // Opacidad aleatoria
-    star.style.opacity = Math.random() * 0.7 + 0.3;
-    
-    starsContainer.appendChild(star);
+// الرسالة الطويلة
+const text = `في هذا اليوم المميز… يوم ميلادك،
+أريد أن أخبرك بشيء من أعماق قلبي.
+
+أنت لست مجرد فتاة عادية…
+أنت قمر يضيء السماء عندما يختفي الضوء،
+ونجمة تلمع في أكثر الليالي ظلامًا.
+
+أنت لست مجرد فتاة…
+أنت وردة نادرة تجعل العالم أجمل فقط بوجودها.
+
+ابتسامتك قادرة على تغيير يوم كامل،
+وكلماتك البسيطة يمكن أن تصنع سعادة لا توصف.
+
+أحيانًا أتساءل كيف يمكن لشخص واحد
+أن يحمل كل هذا الجمال واللطف في قلبه.
+
+في يوم ميلادك،
+أتمنى لك سعادة لا تنتهي،
+وأحلامًا تتحقق واحدة تلو الأخرى،
+وأيامًا مليئة بالضحك والطمأنينة.
+
+وأريدك أن تعرفي شيئًا واحدًا فقط…
+أن وجودك في هذا العالم ليس عاديًا أبدًا،
+بل هو شيء مميز يجعل الحياة أجمل بكثير.
+
+كل عام وأنتِ القمر الذي يضيء أيامي،
+وكل عام وأنتِ أجمل صدفة حدثت في حياتي.
+
+عيد ميلاد سعيد ❤️`;
+
+let i=0;
+function showMessage(){
+  document.getElementById("loveMessage").style.display="block";
+  function typing(){
+    if(i<text.length){
+      document.getElementById("loveMessage").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typing,35);
+    }
   }
+  typing();
 }
 
-// Crear corazones flotantes mejorados
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.classList.add("heart-float");
-  
-  // Usar diferentes corazones
-  const hearts = ["💙", "💜", "❤️", "🩵", "🤍", "💖", "💗", "💓"];
-  const heartChar = hearts[Math.floor(Math.random() * hearts.length)];
-  heart.innerHTML = heartChar;
-  
-  // Posición horizontal aleatoria
-  heart.style.left = Math.random() * 100 + "vw";
-  
-  // Duración y retraso aleatorios para el movimiento
-  const duration = 6 + Math.random() * 6;
-  const delay = Math.random() * 3;
-  heart.style.animationDuration = duration + "s";
-  heart.style.animationDelay = delay + "s";
-  
-  // Tamaño aleatorio
-  const size = 20 + Math.random() * 30;
-  heart.style.fontSize = size + "px";
-  
-  // Color aleatorio para corazones azules y morados
-  const colors = ["#6a11cb", "#1e3c72", "#4a1a7a", "#2575fc", "#8a2be2"];
-  heart.style.color = colors[Math.floor(Math.random() * colors.length)];
-  heart.style.textShadow = `0 0 10px ${colors[Math.floor(Math.random() * colors.length)]}`;
-  
+// قلوب صغيرة تطير
+function createHeart(){
+  const heart=document.createElement("div");
+  heart.className="heart-fly";
+  heart.innerHTML="❤️";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=(Math.random()*25+10)+"px";
   document.body.appendChild(heart);
-  
-  // Eliminar el corazón después de que termine la animación
-  setTimeout(() => {
-    if (heart.parentNode) {
-      heart.remove();
-    }
-  }, (duration + delay) * 1000);
+  setTimeout(()=>heart.remove(),6000);
 }
+setInterval(createHeart,300);
 
-// Efecto de escritura progresiva para textos
-function typeWriterEffect() {
-  const paragraphs = document.querySelectorAll('.message-section p');
-  let delay = 0;
-  
-  paragraphs.forEach(p => {
-    const originalText = p.textContent;
-    p.textContent = '';
-    p.style.visibility = 'hidden';
-    
-    setTimeout(() => {
-      p.style.visibility = 'visible';
-      let i = 0;
-      const typeWriter = () => {
-        if (i < originalText.length) {
-          // Omitir efecto de escritura en palabras destacadas
-          if (originalText.substring(i, i+7) === '<span ' || originalText.substring(i, i+8) === '</span>') {
-            const spanEnd = originalText.indexOf('>', i) + 1;
-            p.innerHTML += originalText.substring(i, spanEnd);
-            i = spanEnd;
-          } else {
-            p.innerHTML += originalText.charAt(i);
-            i++;
-          }
-          setTimeout(typeWriter, 20 + Math.random() * 10);
-        }
-      };
-      typeWriter();
-    }, delay);
-    
-    delay += 1500; // Retraso entre párrafos
-  });
+// ورود تتساقط
+function createRose(){
+  const rose=document.createElement("img");
+  rose.src="https://i.imgur.com/YOURROSE.png"; // ضع رابط وردة صغيرة
+  rose.className="rose";
+  rose.style.left=Math.random()*100+"vw";
+  document.body.appendChild(rose);
+  setTimeout(()=>rose.remove(),5000);
 }
-
-// Inicializar todos los efectos cuando se carga la página
-window.addEventListener('DOMContentLoaded', () => {
-  createStars();
-  
-  // Crear corazones flotantes regularmente
-  setInterval(createHeart, 300);
-  
-  // Activar efecto de escritura
-  setTimeout(typeWriterEffect, 1000);
-  
-  // Efecto de vibración suave al hacer clic en la imagen
-  document.querySelector('.photo').addEventListener('click', function() {
-    this.style.transform = 'scale(1.1) rotate(5deg)';
-    
-    // Crear corazones adicionales al hacer clic
-    for (let i = 0; i < 8; i++) {
-      setTimeout(() => {
-        createHeart();
-      }, i * 100);
-    }
-    
-    setTimeout(() => {
-      this.style.transform = 'scale(1.05) rotate(2deg)';
-    }, 300);
-    
-    setTimeout(() => {
-      this.style.transform = 'scale(1) rotate(0deg)';
-    }, 600);
-  });
-  
-  // Efecto al desplazarse
-  window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const rate = scrolled * -0.5;
-    document.querySelector('.stars').style.transform = `translateY(${rate}px)`;
-  });
-  
-  // Activar efectos de elementos cuando son visibles
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, observerOptions);
-  
-  // Observar elementos para agregar efectos de aparición
-  document.querySelectorAll('.memory-item, .message-section').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
-  });
-});
-
-// Música de fondo suave (se puede agregar si se desea)
-/*
-const audio = new Audio('https://assets.mixkit.co/music/preview/mixkit-romantic-sunset-687.mp3');
-audio.volume = 0.3;
-audio.loop = true;
-
-document.addEventListener('click', function initAudio() {
-  audio.play().catch(e => console.log('La reproducción automática de música no es compatible'));
-  document.removeEventListener('click', initAudio);
-});
-*/
+setInterval(createRose,400);
 </script>
 
 </body>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            </html>
+</html>
