@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>عيد ميلاد سعيد ❤️</title>
+<title>من أعماق قلب محمد للينا ❤️</title>
 
 <style>
 body{
@@ -21,49 +21,15 @@ body{
 }
 
 h1{
-  font-size:48px;
+  font-size:60px;
   margin-top:20px;
-}
-
-#heart-container{
-  position: relative;
-  width: 250px;
-  height: 250px;
-  margin-top: 20px;
-}
-
-#heart-container img{
-  width: 120px;
-  border-radius:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.3);
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%);
-}
-
-#heart-container::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:250px;
-  height:250px;
-  background:url('https://i.imgur.com/4YqOruc.jpg') no-repeat center/contain;
-  z-index:-1;
-  animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.05);}
-  100%{transform:scale(1);}
+  text-shadow: 0 0 20px #fff;
 }
 
 button{
   margin-top:30px;
   padding:15px 40px;
-  font-size:18px;
+  font-size:22px;
   border:none;
   border-radius:30px;
   background:white;
@@ -74,8 +40,8 @@ button{
 #loveMessage{
   max-width:700px;
   margin-top:30px;
-  font-size:22px;
-  line-height:1.7;
+  font-size:24px;
+  line-height:1.8;
   display:none;
   background:rgba(255,255,255,0.15);
   padding:25px;
@@ -85,7 +51,7 @@ button{
 
 .heart-fly{
   position:absolute;
-  font-size:20px;
+  font-size:25px;
   animation:fly 6s linear infinite;
 }
 
@@ -93,29 +59,12 @@ button{
   from{transform:translateY(100vh);opacity:1;}
   to{transform:translateY(-10vh);opacity:0;}
 }
-
-.rose{
-  position:absolute;
-  width:30px;
-  top:-30px;
-  animation:fall 5s linear infinite;
-}
-
-@keyframes fall{
-  0%{top:-30px;transform:translateX(0);}
-  100%{top:100vh;transform:translateX(50px);}
-}
 </style>
 </head>
 
 <body>
 
-<h1>عيد ميلاد سعيد ❤️</h1>
-
-<div id="heart-container">
-  <img src="https://i.imgur.com/wEpz6GA.jpg">
-  <img src="https://i.imgur.com/4YqOruc.jpg">
-</div>
+<h1>من أعماق قلب محمد للينا ❤️</h1>
 
 <button onclick="showMessage()">Open Message 💌</button>
 
@@ -125,7 +74,8 @@ button{
 
 <script>
 // الرسالة الطويلة
-const text = `في هذا اليوم المميز… يوم ميلادك،
+const text = `ليـنا الغالية،
+في هذا اليوم المميز… يوم ميلادك،
 أريد أن أخبرك بشيء من أعماق قلبي.
 
 أنت لست مجرد فتاة عادية…
@@ -179,17 +129,6 @@ function createHeart(){
   setTimeout(()=>heart.remove(),6000);
 }
 setInterval(createHeart,300);
-
-// ورود تتساقط
-function createRose(){
-  const rose=document.createElement("img");
-  rose.src="https://i.imgur.com/YOURROSE.png"; // ضع رابط وردة صغيرة
-  rose.className="rose";
-  rose.style.left=Math.random()*100+"vw";
-  document.body.appendChild(rose);
-  setTimeout(()=>rose.remove(),5000);
-}
-setInterval(createRose,400);
 </script>
 
 </body>
